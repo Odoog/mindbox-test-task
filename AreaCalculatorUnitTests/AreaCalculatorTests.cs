@@ -72,9 +72,9 @@ namespace AreaCalculatorUnitTests
         public void CustomFigureCalculateArea_ShouldBeCorrect(double area, params double[][] dots)
         {
             // arrange
-            var circle = new CustomFigure(dots.Select(dot => (dot[0], dot[1])).ToList());
+            var figure = new CustomFigure(dots.Select(dot => (dot[0], dot[1])).ToList());
             // act
-            var receivedArea = circle.GetArea();
+            var receivedArea = figure.GetArea();
             // assert
             receivedArea.Should().BeInRange(area - Figure.Epsilon, area + Figure.Epsilon);
         }

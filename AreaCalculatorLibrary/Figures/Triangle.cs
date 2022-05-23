@@ -21,7 +21,7 @@ namespace AreaCalculatorLibrary.Figures
         {
             if (sides.Count != 3)
             {
-                throw new ArgumentException("Triangle sides length should be positive");
+                throw new ArgumentException("Triangle sides count should be 3");
             }
 
             if (sides.Any(side => side <= 0))
