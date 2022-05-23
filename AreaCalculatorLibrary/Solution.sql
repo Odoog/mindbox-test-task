@@ -18,13 +18,13 @@ create table dbo.prodcats
 
 -- select products without categories
 select
-    id, product_name, '' as category_name 
+    id as prod_id, product_name, '' as category_name 
 from
     dbo.products
 where
-    not id = ANY(
-        SELECT prod_id
-        FROM dbo.prodcats
+    not id = any(
+        select prod_id
+        from dbo.prodcats
     )
 union
 -- select all pairs product-category
